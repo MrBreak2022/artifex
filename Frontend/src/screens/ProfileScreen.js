@@ -53,33 +53,6 @@ function ProfileScreen() {
     }
   }, [navigate, userInfo, dispatch, user, success]);
 
-  // useEffect(() => {
-  //   axios
-  //     .get("http://127.0.0.1:8000/api/product/owner/")
-  //     .then((response) => {
-  //       console.log(response.data)
-  //       setProducts(response.data.products);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Failed to fetch products:", error);
-  //     });
-  // }, []);
-
-  // const submitHandler = (e) => {
-  //   e.preventDefault();
-  //   if (password !== confirmPassword) {
-  //     setMessage("Passwords do not match");
-  //   } else {
-  //     dispatch(
-  //       userUpdateProfile({
-  //         id: user._id,
-  //         username: username,
-  //         email: email,
-  //         password: password,
-  //       })
-  //     );
-  //   }
-  // };
 
   return (
     <Row>
