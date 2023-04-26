@@ -45,13 +45,13 @@ function HomeScreen() {
           <Message variant='danger'>{error}</Message>
         ) : (
           <>
-            {products.filter((product) => {
+            {Object.values(products).filter((product) => {
               return product.bidding;
             }).length === 0 ? (
               <Message>No products found.</Message>
             ) : (
               <Row>
-                {products.filter((product) => {
+                {Object.values(products).filter((product) => {
                   return (search.toLowerCase() === '' || product.name.toLowerCase().includes(search)) && product.bidding;
                 }).map((product) => (
                   <Col key={product.id} sm={12} md={9} lg={8} xl={3}>
@@ -60,6 +60,7 @@ function HomeScreen() {
                 ))}
               </Row>
             )}
+
           </>
         )}
       </div>
