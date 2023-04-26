@@ -24,6 +24,12 @@ function ProductScreen() {
     const { loading, error, product } = productDetails
     const userLogin = useSelector((state) => state.userLogin);
     const { userInfo } = userLogin;
+
+    if(!userInfo){
+        navigate('/login')
+    } else {
+    }
+
     useEffect(() => {
         dispatch(listProductDetails(id));
     }, [dispatch, id])
