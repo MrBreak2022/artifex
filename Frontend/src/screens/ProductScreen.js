@@ -26,7 +26,7 @@ function ProductScreen() {
     const { userInfo } = userLogin;
 
     if(!userInfo){
-        navigate('/login');
+        navigate('/Login');
     } else {
     }
 
