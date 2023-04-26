@@ -10,10 +10,7 @@ from accounts.serializers import *
 
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
-from django.conf import settings
-import paypalrestsdk
 from rest_framework import status
-from datetime import datetime
 from django.utils import timezone
 
 @api_view(['GET'])
