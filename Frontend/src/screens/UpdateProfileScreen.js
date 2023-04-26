@@ -58,7 +58,7 @@ function UpdateProfileScreen() {
 
                 <Form onSubmit={submitHandler}>
                     <Form.Group controlId="name">
-                        <Form.Label>Name</Form.Label>
+                        <Form.Label>Username</Form.Label>
                         <Form.Control
                             required
                             type="name"
