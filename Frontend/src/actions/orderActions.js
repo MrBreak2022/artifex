@@ -49,7 +49,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
       };
   
       /* MAKING API CALL TO SAVE THE ORDER DETAILS */
-      const { data } = await axios.post(`http://artifex123.pythonanywhere.com/api/orders/add`, order, config);
+      const { data } = await axios.post(`https://artifex123.pythonanywhere.com/api/orders/add`, order, config);
   
       /* IF PUT REQUEST SUCCESSFULL WE DISPATCH & SEND THE PAYLOAD TO OUR REDUCER */
       dispatch({
@@ -95,7 +95,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
     };
 
     /* MAKING API CALL TO GET THE ORDER DETAILS */
-    const { data } = await axios.get(`http://artifex123.pythonanywhere.com/api/orders/${id}/`, config);
+    const { data } = await axios.get(`https://artifex123.pythonanywhere.com/api/orders/${id}/`, config);
 
     /* IF GET REQUEST SUCCESSFULL WE DISPATCH & SEND THE PAYLOAD TO OUR REDUCER */
     dispatch({
@@ -134,7 +134,7 @@ export const payOrder = (id, paymentResult) => async (dispatch, getState) => {
 
     /* MAKING API CALL TO SAVE THE PAYMENT DETAILS */
     const { data } = await axios.put(
-      `http://artifex123.pythonanywhere.com/api/orders/${id}/pay/`,
+      `https://artifex123.pythonanywhere.com/api/orders/${id}/pay/`,
       paymentResult,
       config
     );
@@ -174,7 +174,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
     };
 
     /* MAKING API CALL TO GET THE DETAILS OF THE ORDERS MADE BY THE USER */
-    const { data } = await axios.get(`http://artifex123.pythonanywhere.com/api/orders/myorders/`, config);
+    const { data } = await axios.get(`https://artifex123.pythonanywhere.com/api/orders/myorders/`, config);
 
     /* IF GET REQUEST SUCCESSFULL WE DISPATCH & SEND THE PAYLOAD TO OUR REDUCER */
     dispatch({
@@ -209,7 +209,7 @@ export const listOrders = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`http://artifex123.pythonanywhere.com/api/orders/`, config);
+    const { data } = await axios.get(`https://artifex123.pythonanywhere.com/api/orders/`, config);
 
     dispatch({
       type: ORDER_LIST_SUCCESS,
@@ -243,7 +243,7 @@ export const deleteOrder = (id) => async (dispatch, getState) => {
           },
       };
 
-      const { data } = await axios.delete(`http://artifex123.pythonanywhere.com/api/orders/delete/${id}`, config);
+      const { data } = await axios.delete(`https://artifex123.pythonanywhere.com/api/orders/delete/${id}`, config);
 
 
       dispatch({
