@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 function Footer() {
     return (
-        <footer className="footer bg-dark fixed-bottom text-center">
+        <footer className="footer bg-dark bottom text-center">
             <Container>
 
                 <p className="text-white mb-0" style={{ textShadow: '0 0 10px rgba(255,255,255,0.7), 0 0 20px rgba(255,255,255,0.5), 0 0 30px rgba(255,255,255,0.3), 0 0 40px rgba(255,255,255,0.2)', fontWeight: 'bold' }}>
