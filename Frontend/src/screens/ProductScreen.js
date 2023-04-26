@@ -166,52 +166,28 @@ function ProductScreen() {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
-                    {/* <Col>
-                                            {userInfo && userInfo._id && userInfo.username === product.seller ? (
-                                                <center>
-                                                    <Button
-                                                        onClick={() => handleToggleBidding(product._id, !product.bidding)}
-                                                        type='button'
-                                                        className={product.bidding ? 'btn btn-block bg-dark rounded-pill' : 'bg-dark rounded-pill btn btn-outline-block'}
-                                                        disabled={false}
-                                                    >
-                                                        {product.bidding ? 'Remove from Bidding' : 'Add to Bidding'}
-                                                    </Button>
-                                                </center>
-                                            ) : (
-                                                <Message variant="success"><center>This artwork is up for sale</center></Message>
-                                            )}
-
-                                        </Col> */}
                     <Col>
-                      {userInfo ? (
-                        userInfo._id && userInfo.username === product.seller ? (
-                          <center>
-                            <Button
-                              onClick={() =>
-                                handleToggleBidding(
-                                  product._id,
-                                  !product.bidding
-                                )
-                              }
-                              type="button"
-                              className={
-                                product.bidding
-                                  ? "btn btn-block bg-dark rounded-pill"
-                                  : "bg-dark rounded-pill btn btn-outline-block"
-                              }
-                              disabled={false}
-                            >
-                              {product.bidding
-                                ? "Remove from Bidding"
-                                : "Add to Bidding"}
-                            </Button>
-                          </center>
-                        ) : (
-                          <Message variant="success">
-                            <center>This artwork is up for sale</center>
-                          </Message>
-                        )
+                      {userInfo &&
+                      userInfo._id &&
+                      userInfo.username === product.seller ? (
+                        <center>
+                          <Button
+                            onClick={() =>
+                              handleToggleBidding(product._id, !product.bidding)
+                            }
+                            type="button"
+                            className={
+                              product.bidding
+                                ? "btn btn-block bg-dark rounded-pill"
+                                : "bg-dark rounded-pill btn btn-outline-block"
+                            }
+                            disabled={false}
+                          >
+                            {product.bidding
+                              ? "Remove from Bidding"
+                              : "Add to Bidding"}
+                          </Button>
+                        </center>
                       ) : (
                         <Message variant="success">
                           <center>This artwork is up for sale</center>
