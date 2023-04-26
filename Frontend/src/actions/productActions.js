@@ -33,7 +33,7 @@ export const listProducts = () => async (dispatch) => {
             type: PRODUCT_LIST_REQUEST,
         });
 
-        const { data } = await axios.get("/api/products");
+        const { data } = await axios.get("http://artifex123.pythonanywhere.com/api/products");
 
         dispatch({
             type: PRODUCT_LIST_SUCCESS,
@@ -54,7 +54,7 @@ export const listProducts = () => async (dispatch) => {
 export const listProductDetails = (id) => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_DETAILS_REQUEST })
-        const { data } = await axios.get(`/api/products/${id}`);
+        const { data } = await axios.get(`http://artifex123.pythonanywhere.com/api/products/${id}`);
 
         dispatch({
             type: PRODUCT_DETAILS_SUCCESS,
@@ -90,7 +90,7 @@ export const newProduct = (productData) => async (dispatch, getState) => {
         }
 
 
-        const { data } = await axios.post('/api/products/create', productData, config)
+        const { data } = await axios.post('http://artifex123.pythonanywhere.com/api/products/create', productData, config)
 
         dispatch({
             type: CREATE_PRODUCT_SUCCESS,
@@ -126,7 +126,7 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.delete(`/api/products/delete/${id}/`, config);
+        const { data } = await axios.delete(`http://artifex123.pythonanywhere.com/api/products/delete/${id}/`, config);
 
 
         dispatch({
@@ -164,7 +164,7 @@ export const editProduct = (requestData) => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.put(`/api/products/update/${id}/`, requestData, config);
+        const { data } = await axios.put(`http://artifex123.pythonanywhere.com/api/products/update/${id}/`, requestData, config);
 
         dispatch({
             type: PRODUCT_EDIT_SUCCESS,
@@ -200,7 +200,7 @@ export const sellProduct = (id) => async (dispatch, getState) => {
       };
   
       const { data } = await axios.put(
-        `http://127.0.0.1:8000/api/products/sell/${id}`,
+        `http://artifex123.pythonanywhere.com/api/products/sell/${id}`,
         config
       ); //create a new product
   
@@ -237,7 +237,7 @@ export const sellProduct = (id) => async (dispatch, getState) => {
       };
   
       const { data } = await axios.put(
-        `http://127.0.0.1:8000/api/products/sell/${id}`,
+        `http://artifex123.pythonanywhere.com/api/products/sell/${id}`,
         config
       ); //create a new product
   
@@ -275,7 +275,7 @@ export const sellProduct = (id) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.put(
-            `/api/products/${productId}/bidding`,
+            `http://artifex123.pythonanywhere.com/api/products/${productId}/bidding`,
             { bidding },
             config
         )

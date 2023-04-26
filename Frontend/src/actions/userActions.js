@@ -53,7 +53,7 @@ export const login = (email, password) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.post('/account/login/',
+        const { data } = await axios.post('http://artifex123.pythonanywhere.com/account/login/',
 
             { 'email': email, 'password': password }, config
 
@@ -97,7 +97,7 @@ export const register = (username, email, password, paypalemail) => async (dispa
             }
         }
 
-        const { data } = await axios.post('/account/register/',
+        const { data } = await axios.post('http://artifex123.pythonanywhere.com/account/register/',
 
 
             { 'username': username, 'email': email, 'password': password, 'paypalemail': paypalemail }, config)
@@ -152,7 +152,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.get(`http://127.0.0.1:8000/account/users/${id}/`, config);
+        const { data } = await axios.get(`http://artifex123.pythonanywhere.com/account/users/${id}/`, config);
 
         dispatch({
             type: USER_DETAILS_SUCCESS,
@@ -189,7 +189,7 @@ export const listUsers = () => async (dispatch, getState) => {
         }
 
         const { data } = await axios.get(
-            `/account/users/`,
+            `http://artifex123.pythonanywhere.com/account/users/`,
             config
         )
 
@@ -226,7 +226,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.put("http://127.0.0.1:8000/account/profile/update/", user, config);
+        const { data } = await axios.put("http://artifex123.pythonanywhere.com/account/profile/update/", user, config);
 
         dispatch({
             type: USER_UPDATE_PROFILE_SUCCESS,
@@ -275,7 +275,7 @@ export const editUser = (requestData) => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.put(`http://127.0.0.1:8000/account/users/edit/${id}/`, requestData, config);
+        const { data } = await axios.put(`http://artifex123.pythonanywhere.com/account/users/edit/${id}/`, requestData, config);
 
         dispatch({
             type: USER_EDIT_SUCCESS,
@@ -310,7 +310,7 @@ export const deleteUser = (id) => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.delete(`http://127.0.0.1:8000/account/users/delete/${id}/`, config);
+        const { data } = await axios.delete(`http://artifex123.pythonanywhere.com/account/users/delete/${id}/`, config);
 
 
         dispatch({
