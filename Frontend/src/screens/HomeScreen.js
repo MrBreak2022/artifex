@@ -27,7 +27,7 @@ function HomeScreen() {
     <main onContextMenu={handleRightClick}>
       <div>
         <h1>Bidding</h1>
-        {/* <Form>
+        <Form>
           <Row>
             <Col>
               <Form.Control style={{ width: 550 }} onChange={(e) => setSearch(e.target.value)}
@@ -38,7 +38,7 @@ function HomeScreen() {
               /><br/>
             </Col>
           </Row>
-        </Form> */}
+        </Form>
         {loading ? (
           <Loader />
         ) : error ? (
@@ -46,7 +46,7 @@ function HomeScreen() {
         ) : (
           <>
             {products.filter((product) => {
-              return (search.toLowerCase() === '' || product.name.toLowerCase().includes(search)) && product.bidding;
+              return product.bidding;
             }).length === 0 ? (
               <Message>No products found.</Message>
             ) : (
