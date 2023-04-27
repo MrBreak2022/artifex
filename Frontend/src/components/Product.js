@@ -13,7 +13,7 @@ function Product({ product }) {
       </Link>
       <Card.Body>
           <Card.Title>
-          <strong style={{ fontSize: '24px', color: '#333' }}>{product.name}</strong>
+          <strong style={{ fontSize: '20px', color: '#333' }}>{product.name}</strong>
           </Card.Title>
         <Card.Text as="div">
 
