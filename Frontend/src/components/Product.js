@@ -12,11 +12,9 @@ function Product({ product }) {
         </Watermark>
       </Link>
       <Card.Body>
-        <Link to={`products/${product._id}`}>
           <Card.Title>
             <strong>{product.name}</strong>
           </Card.Title>
-        </Link>
         <Card.Text as="div">
 
         </Card.Text>
