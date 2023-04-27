@@ -14,7 +14,6 @@ import { listProductDetails, toggleBidding } from "../actions/productActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import { Watermark } from "antd";
-import axios from "axios";
 
 function ProductScreen() {
   function handleMouseDown(event) {
@@ -29,7 +28,7 @@ function ProductScreen() {
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
   const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
+  const  {userInfo}  = userLogin;
 
   if (!userInfo) {
     navigate("/Login");
@@ -147,55 +146,49 @@ function ProductScreen() {
                   </ListGroup.Item>
                 )}
 
-                <ListGroup.Item>
-                  <Row>
-                    <Button
-                      className="btn-block rounded-pill bg-dark"
-                      onClick={addToCartHandler}
-                      disabled={
-                        product.bidding === false ||
-                        product.seller === userInfo.username
-                      }
-                      type="Button"
-                    >
-                      {" "}
-                      Add to Cart
-                    </Button>
-                    {/* <Button onClick={() => handleToggleBidding(product._id, !product.bidding)}>{product.bidding ? "Remove from Bidding" : "Add to Bidding"}</Button> */}
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Row>
-                    <Col>
-                      {userInfo &&
-                      userInfo._id &&
-                      userInfo.username === product.seller ? (
-                        <center>
-                          <Button
-                            onClick={() =>
-                              handleToggleBidding(product._id, !product.bidding)
-                            }
-                            type="button"
-                            className={
-                              product.bidding
-                                ? "btn btn-block bg-dark rounded-pill"
-                                : "bg-dark rounded-pill btn btn-outline-block"
-                            }
-                            disabled={false}
-                          >
-                            {product.bidding
-                              ? "Remove from Bidding"
-                              : "Add to Bidding"}
-                          </Button>
-                        </center>
-                      ) : (
-                        <Message variant="success">
-                          <center>This artwork is up for sale</center>
-                        </Message>
-                      )}
-                    </Col>
-                  </Row>
-                </ListGroup.Item>
+<ListGroup.Item>
+<Row>
+<Button
+className="btn-block rounded-pill bg-dark"
+onClick={addToCartHandler}
+disabled={product.bidding === false }
+type="Button"
+>
+{" "}
+Add to Cart
+</Button>
+</Row>
+</ListGroup.Item>
+<ListGroup.Item>
+<Row>
+<Col>
+{userInfo && userInfo._id && userInfo.username === product.seller ? (
+<center>
+<Button
+onClick={() =>
+handleToggleBidding(product._id, !product.bidding)
+}
+type="button"
+className={
+product.bidding
+? "btn btn-block bg-dark rounded-pill"
+: "bg-dark rounded-pill btn btn-outline-block"
+}
+disabled={false}
+>
+{product.bidding
+? "Remove from Bidding"
+: "Add to Bidding"}
+</Button>
+</center>
+) : (
+<Message variant="success">
+<center>This artwork is up for sale</center>
+</Message>
+)}
+</Col>
+</Row>
+</ListGroup.Item>
               </ListGroup>
             </Card>
           </Col>
