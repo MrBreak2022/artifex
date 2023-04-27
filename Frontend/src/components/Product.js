@@ -8,7 +8,10 @@ function Product({ product }) {
     <Card className="my-3 p-3 rounded">
       <Link to={`/products/${product._id}`}>
         <Watermark content={"くたばれ、クソ野郎"} gap={[20, 20]}>
-          <Card.Img height={'300px'} width={'20rem'} src={product.image} />
+          <Card.Img 
+        height={'300px'}
+        width={'20rem'}
+        style={{ objectFit: 'cover', maxHeight: '300px', maxWidth: '100%' }} src={product.image} />
         </Watermark>
       </Link>
       <Card.Body>
